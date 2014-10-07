@@ -1,5 +1,3 @@
-package Cryptography;
-
 /**
  * A class that handling all the convension of the characters, such as from
  * alphabetic letters to numeric numbers, vice versa, or from a binary form

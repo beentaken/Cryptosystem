@@ -1,4 +1,3 @@
-package Cryptography;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,8 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.text.DefaultEditorKit;
@@ -23,11 +20,12 @@ import javax.swing.text.DefaultEditorKit;
  * A program that simulate some cryptography system and perform some algorithms
  * to encrypt and decrypt messages. This program have three types of algorithms,
  * ElGamal, RSA, and Knapsack algorithms. There are also a Prime Generator
- * tool and configuration for the maximum value.
+ * tool and configuration for the maximum value for the keys used in the
+ * program.
  * 
  * @author Su Khai Koh
  */
-public class Cryptography extends JFrame {
+public class Cryptosystem extends JFrame {
 
     private JMenuBar menuBar;
     private JPanel leftPanel, centerPanel, rightPanel, egPanel, rsaPanel, ksPanel;
@@ -37,10 +35,8 @@ public class Cryptography extends JFrame {
     private JLabel headerLabel;
     private JTextField textField1, textField2, textField3, textField4, textField5;
     private JComboBox<String> algorithmSelectionList;
-    private boolean helpAlreadyOpened;
     private String message, egCipherText, nonEGCipherText;
     private int selectedAlgorithm;
-    private HelpContents help;
     private ElGamal eg;
     private RSA rsa;
     private Knapsack ks;
@@ -55,7 +51,7 @@ public class Cryptography extends JFrame {
      * Default constructor. Initiate ElGamal, RSA, and Knapsack objects, and
      * also setup all other components to the frame.
      */
-    public Cryptography() {
+    public Cryptosystem() {
         
         eg = new ElGamal();
         rsa = new RSA();
@@ -121,22 +117,6 @@ public class Cryptography extends JFrame {
         JMenu empty = new JMenu(" ");
         empty.setEnabled(false);
         menuBar.add(empty);
-        
-        // Add help menu
-        JMenu help = new JMenu("Help");
-        help.setMnemonic(KeyEvent.VK_H);
-        
-        JMenuItem helpMenuItem = new JMenuItem("Help Contents", 
-                                 new ImageIcon("./src/Help/help_icon.png"));
-        helpMenuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_H, ActionEvent.ALT_MASK));
-        helpMenuItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                displayHelpDialog();
-            }
-        });
-        help.add(helpMenuItem);
-        menuBar.add(help);
     }
     
     /**
@@ -184,7 +164,6 @@ public class Cryptography extends JFrame {
      * Display a window for user to get a random prime number within the given
      * range.
      */
-    
     private void displayPrimeDialog() {
         
         // Create a custom panel
@@ -231,38 +210,6 @@ public class Cryptography extends JFrame {
             // Show the prime in text field
             JOptionPane.showMessageDialog(null, tfPrime, "Prime Number",
                     JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
-    
-    /**
-     * Display a help window. Only one help window will be displayed in all
-     * the time. If the user tried to open a second help window, the first 
-     * help window will be brought to the front and no new help window will
-     * be displayed.
-     */
-    private void displayHelpDialog() {
-               
-        if (!helpAlreadyOpened) {
-            // Open a new window to show help page if a help page is not yet
-            // shown
-            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
-
-            help = new HelpContents(frame, false);;
-            
-            help.addWindowListener(new WindowAdapter() {
-                public void windowClosing(WindowEvent e) {
-                    // Close and dispose the help page when close button is hit
-                    e.getWindow().dispose();
-                    helpAlreadyOpened = false;
-                }
-            });
-            
-            helpAlreadyOpened = true;
-            
-        } else {
-            // Bring the existence help page to the front if user try to open
-            // a new help page
-            help.toFront();
         }
     }
     
@@ -876,8 +823,8 @@ public class Cryptography extends JFrame {
             }
         }
 
-        JFrame f = new Cryptography();
-        f.setTitle("Cryptography");
+        JFrame f = new Cryptosystem();
+        f.setTitle("Cryptosystem");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setResizable(false);
         f.pack();

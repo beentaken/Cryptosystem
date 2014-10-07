@@ -1,5 +1,3 @@
-package Cryptography;
-
 /**
  * An interface for all the algorithm in this cryptography system.
  * 
