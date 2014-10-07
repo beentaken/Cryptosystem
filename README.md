@@ -7,9 +7,33 @@ This program was influenced from the book, *Discrete Mathematics and Its Applica
   
 =================================================
 Alphabetic to number conversion for this program:
-A: 00    G: 06    M: 12    S: 18    Y: 24
-B: 01    H: 07    N: 13    T: 19    Z: 25
-C: 02    I: 08    O: 14    U: 20
-D: 03    J: 09    P: 15    V: 21
-E: 04    K: 10    Q: 16    W: 22
-F: 05    L: 11    R: 17    X: 23
+
+| Letters | Numbers |
+| ------- | ------- |
+| A       | 00      | 
+| B       | 01      | 
+| C       | 02      | 
+| D       | 03      | 
+| E       | 04      | 
+| F       | 05      | 
+| G       | 06      |
+| H       | 07      | 
+| I       | 08      | 
+| J       | 09      | 
+| K       | 10      |
+| L       | 11      | 
+| M       | 12      |
+| N       | 13      |
+| O       | 14      |
+| P       | 15      | 
+| Q       | 16      |
+| R       | 17      |
+| S       | 18      |
+| T       | 19      |
+| U       | 20      |
+| V       | 21      |
+| W       | 22      |
+| X       | 23      |
+| Y       | 24      |
+| Z       | 25      |
+---------------------
