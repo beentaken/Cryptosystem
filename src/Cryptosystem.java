@@ -24,7 +24,7 @@ import javax.swing.text.DefaultEditorKit;
  * program.
  * 
  * This program was influenced from the book, Discrete Mathematics and Its 
- * Applications 7th Edition (Chapter 4 Number Theory and Cryptography. This
+ * Applications 7th Edition (Chapter 4 Number Theory and Cryptography). This
  * program can only encrypt alphabetic characters, and it encrypts two
  * characters at once. The resulting cipher text will be in the format of only
  * numbers.
