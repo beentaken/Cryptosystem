@@ -39,4 +39,4 @@ Alphabetic to number conversion for this program:
 ---------------------
 
 ####Screenshot of the program
-![Cryptosystem](/Cryptosystem/images/Cryptosystem_img.png?raw=true "Cryptosystem")
+![Cryptosystem](/images/Cryptosystem_img.png?raw=true "Cryptosystem")
